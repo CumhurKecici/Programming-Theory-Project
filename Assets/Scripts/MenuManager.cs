@@ -22,7 +22,7 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        //load game scene
+        SceneManager.LoadScene("GamePlay");
     }
 
     public void Settings()
@@ -73,6 +73,7 @@ public class MenuManager : MonoBehaviour
 
     private void ApplySettings()
     {
+        DataAccess.LoadSettings();
         GameObject.Find("textbox_Playername").GetComponent<InputField>().text = DataAccess.Settings.PlayerName;
         GameObject.Find("slider_BackgroundMusicVolume").GetComponent<Slider>().value = DataAccess.Settings.BackgroundMusicVolume;
     }
